@@ -1,0 +1,13 @@
+export const PORT_CONST = 'PORT';
+
+export const NODE_ENV_CONST = 'NODE_ENV';
+
+export const STRIPE_API_KEY_CONST = 'STRIPE_API_KEY';
+
+export const STRIPE_CLI_TOKEN_CONST = 'STRIPE_CLI_TOKEN';
+
+export const STRIPE_WEBHOOK_SECRET_CONST = 'STRIPE_WEBHOOK_SECRET';
+
+export const DATABASE_URL_CONST = 'DATABASE_URL';
+
+export const SERVER_URL_CONST = 'SERVER_URL';
