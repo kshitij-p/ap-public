@@ -36,9 +36,9 @@ What could and would have been improved/changed if I had more time:
    of time for me to add and integrate it as I would have to ngrok and use that
    to forward requests which is cumbersome.
 1. Complete the cart integration that re uses checkout sessions instead of
-   creating a new one every time for a payment. The basic cart api is already
-   there and payment expiration is also present which would help finish this
-   feature. Additionally, the default expiration for a session can be set to a
-   low amount like 10-15 mins.
+   creating a new one every time for a payment and also track payments in depth.
+   The basic cart api is already there and payment expiration is also present
+   which would help finish this feature. Additionally, the default expiration
+   for a session can be set to a low amount like 10-15 mins.
 1. Make a better docker compose file with next js and stripe cli and other stuff
    included within it.
