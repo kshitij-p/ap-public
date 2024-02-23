@@ -16,6 +16,8 @@ _Take home assignment submission for appleute_
 1. Go to the backend folder and run `npm run stripe:listen`
 1. Go to the frontend folder and run `npm run quickstart`
 1. Finally visit `http://localhost:3000` to see the final project
+1. Go to any product and enter a quantity and click on buy to go to the payment
+   page.
 
 # Notes
 
