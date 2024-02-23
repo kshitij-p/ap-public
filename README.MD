@@ -20,9 +20,11 @@ _Take home assignment submission for appleute_
 # Notes
 
 Thoughts behind architecture: The system shldnt need to know about how stripe
-works internally hence, the payment processor interface is an example of this
-and is added to create a common set of methods. This allows for addition of
-future payment gateways as well. Hence this stripe service is designed like a
+works internally, the payment processor interface is an example of how a system
+can work with the stripe service in such a way which allows the stipe service to
+be as modular and as lean as possible. The payment processor interface is added
+to create a common set of methods. This also allows addition of more payment
+gateways in the future as well. Hence this stripe service is designed like a
 plugin with no dependenices. Other services are made to build on top of it.
 
 What could and would have been improved/changed if I had more time:
@@ -31,10 +33,10 @@ What could and would have been improved/changed if I had more time:
    have a cli like stripe to allow for easy local testing, it would take a lot
    of time for me to add and integrate it as I would have to ngrok and use that
    to forward requests which is cumbersome.
-1. Add full cart integration that re uses checkout sessions instead of creating
-   a new one every time for a payment. The basic cart api is already there and
-   payment expiration is alos present which would facilitate this feature.
-   Alternatively, the default expiration for a session can be set to a low
-   amount like 5 mins.
+1. Complete the cart integration that re uses checkout sessions instead of
+   creating a new one every time for a payment. The basic cart api is already
+   there and payment expiration is also present which would help finish this
+   feature. Additionally, the default expiration for a session can be set to a
+   low amount like 10-15 mins.
 1. Make a better docker compose file with next js and stripe cli and other stuff
    included within it.
