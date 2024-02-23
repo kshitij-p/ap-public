@@ -89,7 +89,7 @@ const BuyProductForm = ({
 
           await buyProduct({
             items: [{ productId: product.id, quantity }],
-            successUrl: `${process.env.NODE_ENV === "development" ? "http://" : "https://"}${process.env.NEXT_PUBLIC_VERCEL_URL ?? "http://localhost:3000"}/${product.id}/payment-successful`,
+            successUrl: `${getHostUrl()}/success`,
             provider: "STRIPE",
           });
         })}

@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { AnimatePresence, motion } from "framer-motion";
 import { Loader2Icon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import { Input } from "~/components/ui/input";
 import { fetch } from "~/lib/fetch";
@@ -16,12 +17,14 @@ const ProductList = ({ products }: { products: Product[] }) => {
       <AnimatePresence>
         {products.map((product) => {
           return (
-            <li key={product.id}>
-              <motion.a
+            <motion.li
+              key={product.id}
+              initial={{ opacity: 0.4 }}
+              animate={{ opacity: 1 }}
+            >
+              <Link
                 className="scale group flex max-h-[30rem] flex-col items-center gap-1 transition duration-300 hover:scale-105 focus:scale-105 focus:outline-none md:max-h-[40rem] md:gap-2"
                 href={`/products/${product.id}`}
-                initial={{ opacity: 0.4 }}
-                animate={{ opacity: 1 }}
               >
                 <div className="relative aspect-[9/10] w-full scale-100 rounded-sm ">
                   <Image
@@ -37,8 +40,8 @@ const ProductList = ({ products }: { products: Product[] }) => {
                   </h4>
                   <span className="md:text-xl">₹{product.priceInr}</span>
                 </div>
-              </motion.a>
-            </li>
+              </Link>
+            </motion.li>
           );
         })}
       </AnimatePresence>

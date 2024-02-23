@@ -10,8 +10,6 @@ export class StripeService {
     this.stripe = stripe;
   }
 
-  async registerProduct() {}
-
   async createPayment(
     data: CreatePaymentBodyDto['items'],
     options: Omit<Stripe.Checkout.SessionCreateParams, 'line_items'>,
