@@ -1,3 +1,5 @@
+_Take home assignment submission for appleute_
+
 # How to run
 
 1. Clone the repo and run `npm i` inside backend and frontend folders
@@ -15,8 +17,24 @@
 1. Go to the frontend folder and run `npm run quickstart`
 1. Finally visit `http://localhost:3000` to see the final project
 
-# How to stop the server
+# Notes
 
-1. Run `docker compose down` in the root of the project to kill the server and
-   the db. Nex time you can start the server with just `docker compose -d`
-   instead of building it again
+Thoughts behind architecture: The system shldnt need to know about how stripe
+works internally hence, the payment processor interface is an example of this
+and is added to create a common set of methods. This allows for addition of
+future payment gateways as well. Hence this stripe service is designed like a
+plugin with no dependenices. Other services are made to build on top of it.
+
+What could and would have been improved/changed if I had more time:
+
+1. Add 1 more payment gateway like Razorpay or something. Since Razorpay doesn't
+   have a cli like stripe to allow for easy local testing, it would take a lot
+   of time for me to add and integrate it as I would have to ngrok and use that
+   to forward requests which is cumbersome.
+1. Add full cart integration that re uses checkout sessions instead of creating
+   a new one every time for a payment. The basic cart api is already there and
+   payment expiration is alos present which would facilitate this feature.
+   Alternatively, the default expiration for a session can be set to a low
+   amount like 5 mins.
+1. Make a better docker compose file with next js and stripe cli and other stuff
+   included within it.
