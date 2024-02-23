@@ -16,6 +16,8 @@ import { CartService } from './cart/cart.service';
 import { CartModule } from './cart/cart.module';
 import configuration from './config/configuration';
 import { CartController } from './cart/cart.controller';
+import { ZodValidationPipe } from 'nestjs-zod';
+import { APP_PIPE } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -27,6 +29,7 @@ import { CartController } from './cart/cart.controller';
         process.env.NODE_ENV === 'production' ? '.env' : '.env.development',
       ],
     }),
+
     StripeModule.register(
       {
         configEnvKey: 'STRIPE_API_KEY',
@@ -49,6 +52,10 @@ import { CartController } from './cart/cart.controller';
   ],
   controllers: [AppController, ProductController, CartController],
   providers: [
+    {
+      provide: APP_PIPE,
+      useClass: ZodValidationPipe,
+    },
     AppService,
     PrismaService,
     PaymentService,
