@@ -16,7 +16,13 @@ _Take home assignment submission for appleute_
 1. Go to the frontend folder and run `npm run quickstart`
 1. Finally visit `http://localhost:3000` to see the final project
 1. Go to any product and enter a quantity and click on buy to go to the payment
-   page.
+   page. You can use stripe's test cards as the app is test mode and no real
+   money will be used.
+1. After finishing the process u will be redirected to the success page.
+1. You can go to `http://localhost:3001/payments/list` and you should see the
+   recently finished payment. Didn't get enough time to integrate a payments
+   list for showing this on the frontend so this is an alternative. In real apps
+   this should NOT be public.
 
 # Notes
 
