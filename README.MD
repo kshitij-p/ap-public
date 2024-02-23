@@ -35,7 +35,7 @@ gateways in the future as well. Hence this stripe service is designed like a
 plugin with no dependenices. Other services are made to build on top of it.
 
 What could and would have been improved/changed if I had more time:
-
+1. Add more utility methods like for registering a product to Stripe service. I skipped this since the app doesnt have CRUD for products.
 1. Add 1 more payment gateway like Razorpay or something. Since Razorpay doesn't
    have a cli like stripe to allow for easy local testing, it would take a lot
    of time for me to add and integrate it as I would have to ngrok and use that
