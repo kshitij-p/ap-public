@@ -8,8 +8,7 @@ _Take home assignment submission for appleute_
    or `stripe login --api-key <YOUR_RESTRICTED_API_KEY>`
 1. Follow the `.env.example` files in backend and frontend folders to setup the
    .env files respectively
-1. Install docker. Docker desktop is not needed, just the cli is enough.
-1. At the root of the directory, run
+1. Install docker and from the root of the directory, run
    `docker compose build && docker compose up -d`. This will start the server in
    detached mode with postgres on a mounted volume. It will also add 10 products
    to the db and seed them on stripe.
